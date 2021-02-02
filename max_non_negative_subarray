@@ -1,0 +1,30 @@
+    def max_non_negative(A):
+        max_so_far=-53333
+        size=len(A)
+        curr_sum=0
+        st=-1
+        end=-1
+        poi=0
+        
+        for i in range(size):
+            if A[i]<0:
+                curr_sum=0
+                poi=i+1
+            curr_sum=curr_sum+A[i]
+            
+            if curr_sum == max_so_far:
+                if end-st<i-poi:
+                    st=poi
+                    end=i
+                    
+            if max_so_far<curr_sum:
+                st=poi
+                end=i
+                max_so_far=curr_sum
+            
+            if curr_sum <0:
+                curr_sum=0
+                poi=i+1
+
+        
+        return A[st:end+1]
