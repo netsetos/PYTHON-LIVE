@@ -1,4 +1,4 @@
-    def getFinal(self, A, B):
+    def gcd(A, B):
         if( A==0 or B==0 or A==B):
             return A+B
         if(A<B):
@@ -10,4 +10,4 @@
             A=A%B
             if A==0:
                 A=B
-        return self.getFinal(A,B)
+        return gcd(A,B)
